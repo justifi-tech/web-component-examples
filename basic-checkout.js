@@ -87,6 +87,7 @@ app.get('/', async (req, res) => {
         <script type="module" src="/scripts/webcomponents/webcomponents.esm.js"></script>
         <link rel="stylesheet" href="/scripts/webcomponents/webcomponents.css">
         <link rel="stylesheet" href="/styles/theme.css">
+        <link rel="stylesheet" href="/styles/example.css">
       </head>
       <body>
         <div>

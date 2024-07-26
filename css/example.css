@@ -1,0 +1,23 @@
+/* Start: Example purposes only */
+
+body {
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+body>div {
+  flex-grow: 1;
+  overflow-y: auto;
+  width: 50vw;
+}
+
+#output-pane {
+  background: white;
+  border-left: 1px solid #ccc;
+  padding: 20px;
+  width: 50%;
+}
+
+/* End: example purposes only */
