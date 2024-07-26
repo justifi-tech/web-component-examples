@@ -89,19 +89,30 @@ app.get('/', async (req, res) => {
         <link rel="stylesheet" href="/styles/theme.css">
       </head>
       <body>
-        <justifi-checkout auth-token="${webComponentToken}" checkout-id="${checkout.id}">
-          <div slot="insurance">
-            <justifi-insurance auth-token="${webComponentToken}" checkout-id="${checkout.id}"></justifi-insurance>
-          </div>
-        </justifi-checkout>
+        <div>
+          <justifi-checkout auth-token="${webComponentToken}" checkout-id="${checkout.id}">
+            <div slot="insurance">
+              <justifi-insurance auth-token="${webComponentToken}" checkout-id="${checkout.id}"></justifi-insurance>
+            </div>
+          </justifi-checkout>
+        </div>
+        <div id="output-pane"><em>Checkout output will appear here...</em></div>
       </body>
       <script>
         const justifiCheckout = document.querySelector('justifi-checkout');
+
+        function writeOutputToPage(event) {
+          document.getElementById('output-pane').innerHTML = '<code><pre>' + JSON.stringify(event.detail, null, 2) + '</pre></code>';
+        }
+
         justifiCheckout.addEventListener('submitted', (event) => {
           console.log(event);
+          writeOutputToPage(event);
         });
+
         justifiCheckout.addEventListener('error-event', (event) => {
           console.log(event);
+          writeOutputToPage(event);
         });
       </script>
     </html>
