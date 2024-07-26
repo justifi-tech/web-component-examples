@@ -91,11 +91,7 @@ app.get('/', async (req, res) => {
       </head>
       <body>
         <div>
-          <justifi-checkout auth-token="${webComponentToken}" checkout-id="${checkout.id}">
-            <div slot="insurance">
-              <justifi-insurance auth-token="${webComponentToken}" checkout-id="${checkout.id}"></justifi-insurance>
-            </div>
-          </justifi-checkout>
+          <justifi-checkout auth-token="${webComponentToken}" checkout-id="${checkout.id}"></justifi-checkout>
         </div>
         <div id="output-pane"><em>Checkout output will appear here...</em></div>
       </body>
