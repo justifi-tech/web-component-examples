@@ -79,6 +79,15 @@ app.get('/', async (req, res) => {
   const checkout = await makeCheckout(token);
   const webComponentToken = await getWebComponentToken(token, checkout.id);
 
+  const billingAddress = {
+    name: 'John Doe',
+    address_line1: '123 Main St',
+    address_line2: 'Apt 4B',
+    address_city: 'New York',
+    address_state: 'NY',
+    address_postal_code: '10001',
+  };
+
   res.send(`
     <!DOCTYPE html>
     <html>
@@ -93,23 +102,17 @@ app.get('/', async (req, res) => {
         <div>
           <justifi-checkout auth-token="${webComponentToken}" checkout-id="${checkout.id}"></justifi-checkout>
         </div>
-        <div id="output-pane"><em>Checkout output will appear here...</em></div>
+        <div id="output-pane">
+          Billing address data:
+          <code><pre>${JSON.stringify(billingAddress)}</pre></code>
+          <button id="fill-billing-address">Fill Billing Address</button>
+        </div>
       </body>
       <script>
         const justifiCheckout = document.querySelector('justifi-checkout');
-
-        function writeOutputToPage(event) {
-          document.getElementById('output-pane').innerHTML = '<code><pre>' + JSON.stringify(event.detail, null, 2) + '</pre></code>';
-        }
-
-        justifiCheckout.addEventListener('submitted', (event) => {
-          console.log(event);
-          writeOutputToPage(event);
-        });
-
-        justifiCheckout.addEventListener('error-event', (event) => {
-          console.log(event);
-          writeOutputToPage(event);
+        const fillButton = document.getElementById('fill-billing-address');
+        fillButton.addEventListener('click', () => {
+          justifiCheckout.fillBillingForm(${JSON.stringify(billingAddress)});
         });
       </script>
     </html>
