@@ -2,33 +2,13 @@ require('dotenv').config();
 
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(
   '/scripts',
   express.static(__dirname + '/node_modules/@justifi/webcomponents/dist/')
 );
 app.use('/styles', express.static(__dirname + '/css/'));
-
-const insurance = {
-  primary_identity: {
-    state: "MN",
-    email: "test@justifi.tech",
-    first_name: "John",
-    last_name: "Doe",
-    postal_code: "55401",
-    country: "US",
-  },
-  policy_attributes: {
-    insurable_amount: 1000,
-    start_date: "2024-08-01",
-    end_date: "2024-08-31",
-    covered_identity: {
-      first_name: "John",
-      last_name: "Doe"
-    }
-  }
-};
 
 async function getToken() {
   const requestBody = JSON.stringify({
@@ -111,25 +91,7 @@ app.get('/', async (req, res) => {
       </head>
       <body>
         <div>
-          <justifi-checkout auth-token="${webComponentToken}" checkout-id="${checkout.id}">
-            <div slot="insurance">
-              <justifi-season-interruption-insurance
-                auth-token="${webComponentToken}"
-                checkout-id="${checkout.id}"
-                primary-identity-first-name="${insurance.primary_identity.first_name}"
-                primary-identity-last-name="${insurance.primary_identity.last_name}"
-                primary-identity-state="${insurance.primary_identity.state}"
-                primary-identity-country="${insurance.primary_identity.country}"
-                primary-identity-postal-code="${insurance.primary_identity.postal_code}"
-                primary-identity-email-address="${insurance.primary_identity.email}"
-                policy-attributes-insurable-amount="${insurance.policy_attributes.insurable_amount}"
-                policy-attributes-start-date="${insurance.policy_attributes.start_date}"
-                policy-attributes-end-date="${insurance.policy_attributes.end_date}"
-                covered-identity-first-name="${insurance.policy_attributes.covered_identity.first_name}"
-                covered-identity-last-name="${insurance.policy_attributes.covered_identity.last_name}">
-              </justifi-season-interruption-insurance>
-            </div>
-          </justifi-checkout>
+          <justifi-checkout auth-token="${webComponentToken}" checkout-id="${checkout.id}"></justifi-checkout>
         </div>
         <div id="output-pane"><em>Checkout output will appear here...</em></div>
       </body>

@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon basic.js",
-    "start:basic": "nodemon basic.js",
-    "start:with-insurance": "nodemon with-insurance.js",
+    "start": "nodemon ./examples/checkout.js",
+    "start:checkout": "nodemon ./examples/checkout.js",
+    "start:checkout-with-insurance": "nodemon ./examples/checkout-with-insurance.js",
+    "start:payment-provisioning": "nodemon ./examples/payment-provisioning.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
