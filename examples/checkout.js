@@ -6,9 +6,9 @@ const port = process.env.PORT || 3000;
 
 app.use(
   '/scripts',
-  express.static(__dirname + '/node_modules/@justifi/webcomponents/dist/')
+  express.static(__dirname + '/../node_modules/@justifi/webcomponents/dist/')
 );
-app.use('/styles', express.static(__dirname + '/css/'));
+app.use('/styles', express.static(__dirname + '/../css/'));
 
 async function getToken() {
   const requestBody = JSON.stringify({
