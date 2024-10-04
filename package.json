@@ -7,6 +7,7 @@
     "start": "nodemon ./examples/checkout.js",
     "start:checkout": "nodemon ./examples/checkout.js",
     "start:checkout-with-insurance": "nodemon ./examples/checkout-with-insurance.js",
+    "start:dispute": "nodemon ./examples/dispute.js",
     "start:payment-provisioning": "nodemon ./examples/payment-provisioning.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
