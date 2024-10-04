@@ -1,23 +1,25 @@
 body {
   background-color: #efefef;
-  padding: 0;
+  padding: 5% 0 0 0;
   margin: 0;
 }
 
 justifi-checkout {
   display: block;
   max-width: 400px;
-  margin: 5% auto;
+  margin: 0 auto;
   padding: 40px;
   background-color: #fff;
   border-radius: 4px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 }
 
-justifi-season-interruption-insurance {
+justifi-season-interruption-insurance,
+justifi-dispute-management {
   display: block;
-  padding: 20px 20px 10px 20px;
+  background-color: #fff;
   border: 1px solid #ddd;
+  padding: 20px 20px 10px 20px;
 }
 
 :root {

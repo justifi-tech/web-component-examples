@@ -17,7 +17,7 @@ app.get('/', async (req, res) => {
     <!DOCTYPE html>
     <html>
       <head>
-        <title>JustiFi Checkout</title>
+        <title>JustiFi Dispute Component</title>
         <script type="module" src="/scripts/webcomponents/webcomponents.esm.js"></script>
         <link rel="stylesheet" href="/scripts/webcomponents/webcomponents.css">
         <link rel="stylesheet" href="/styles/theme.css">
