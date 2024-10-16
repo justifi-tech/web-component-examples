@@ -2,13 +2,13 @@ require('dotenv').config();
 
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(
   '/scripts',
-  express.static(__dirname + '/node_modules/@justifi/webcomponents/dist/')
+  express.static(__dirname + '/../node_modules/@justifi/webcomponents/dist/')
 );
-app.use('/styles', express.static(__dirname + '/css/'));
+app.use('/styles', express.static(__dirname + '/../css/'));
 
 const insurance = {
   primary_identity: {
@@ -21,8 +21,8 @@ const insurance = {
   },
   policy_attributes: {
     insurable_amount: 1000,
-    start_date: "2024-08-01",
-    end_date: "2024-08-31",
+    start_date: "2024-12-01",
+    end_date: "2024-12-31",
     covered_identity: {
       first_name: "John",
       last_name: "Doe"
