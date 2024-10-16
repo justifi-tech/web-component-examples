@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@justifi/webcomponents": "^4.16.0",
+    "@justifi/webcomponents": "^4.19.3",
     "express": "^4.19.2",
     "nodemon": "^3.1.4"
   },
