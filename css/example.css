@@ -1,19 +1,25 @@
 /* Start: Example purposes only */
 
-body {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.two-column-layout {
   height: 100vh;
   max-height: 100vh;
   display: flex;
   flex-direction: row;
 }
 
-body>div {
+.two-column-layout>.column-preview {
   flex-grow: 1;
   overflow-y: auto;
   width: 50vw;
 }
 
-#output-pane {
+.two-column-layout>.column-output {
   background: white;
   border-left: 1px solid #ccc;
   padding: 20px;

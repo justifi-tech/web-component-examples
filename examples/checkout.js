@@ -89,11 +89,11 @@ app.get('/', async (req, res) => {
         <link rel="stylesheet" href="/styles/theme.css">
         <link rel="stylesheet" href="/styles/example.css">
       </head>
-      <body>
-        <div>
+      <body class="two-column-layout">
+        <div class="column-preview">
           <justifi-checkout auth-token="${webComponentToken}" checkout-id="${checkout.id}"></justifi-checkout>
         </div>
-        <div id="output-pane"><em>Checkout output will appear here...</em></div>
+        <div class="column-output" id="output-pane"><em>Checkout output will appear here...</em></div>
       </body>
       <script>
         const justifiCheckout = document.querySelector('justifi-checkout');
