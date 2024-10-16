@@ -2,13 +2,13 @@ require('dotenv').config();
 
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(
   '/scripts',
-  express.static(__dirname + '/node_modules/@justifi/webcomponents/dist/')
+  express.static(__dirname + '/../node_modules/@justifi/webcomponents/dist/')
 );
-app.use('/styles', express.static(__dirname + '/css/'));
+app.use('/styles', express.static(__dirname + '/../css/'));
 
 async function getToken() {
   const requestBody = JSON.stringify({
