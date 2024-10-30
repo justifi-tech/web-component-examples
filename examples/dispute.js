@@ -24,7 +24,7 @@ app.get('/', async (req, res) => {
         <link rel="stylesheet" href="/styles/example.css">
       </head>
       <body>
-        <div style="margin:0 auto;max-width:600px;">
+        <div style="margin:0 auto;max-width:700px;">
           <justifi-dispute-management></justifi-dispute-management>
         </div>
       </body>
