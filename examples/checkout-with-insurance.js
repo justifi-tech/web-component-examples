@@ -49,9 +49,8 @@ async function getToken() {
     console.log('ERROR:', error);
   }
 
-  const data = await response.json();
-
-  return data.access_token;
+  const { access_token } = await response.json();
+  return access_token;
 }
 
 async function makeCheckout(token) {
