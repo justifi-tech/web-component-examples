@@ -4,7 +4,8 @@ body {
   margin: 0;
 }
 
-justifi-checkout {
+justifi-checkout,
+justifi-tokenize-payment-method {
   display: block;
   max-width: 400px;
   margin: 5% auto;
