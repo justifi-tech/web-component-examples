@@ -81,6 +81,10 @@ app.get('/', async (req, res) => {
           justifiTerminals.addEventListener('error-event', (event) => {
             console.log(event);
           });
+
+          justifiTerminals.addEventListener('terminal-row-clicked', (event) => {
+            console.log(event);
+          });
         </script>
       </body>
     </html>
