@@ -75,6 +75,13 @@ app.get('/', async (req, res) => {
         <div style="margin:0 auto;max-width:700px;">
           <justifi-terminals-list auth-token="${webComponentToken}" account-id="${accountId}"></justifi-terminals-list>
         </div>
+        <script>
+          const justifiTerminals = document.querySelector('justifi-terminals-list');
+
+          justifiTerminals.addEventListener('error-event', (event) => {
+            console.log(event);
+          });
+        </script>
       </body>
     </html>
   `);
