@@ -59,9 +59,7 @@ async function getWebComponentToken(token) {
 app.get('/', async (req, res) => {
   const accountId = process.env.SUB_ACCOUNT_ID;
   const token = await getToken();
-  console.log('Token:', token);
   const webComponentToken = await getWebComponentToken(token);
-  console.log('Web Component Token:', webComponentToken);
 
   res.send(`
     <!DOCTYPE html>
@@ -77,6 +75,17 @@ app.get('/', async (req, res) => {
         <div style="margin:0 auto;max-width:700px;">
           <justifi-payments-list auth-token="${webComponentToken}" account-id="${accountId}"></justifi-payments-list>
         </div>
+        <script>
+          const justifiPayments = document.querySelector('justifi-payments-list');
+
+          justifiPayments.addEventListener('error-event', (event) => {
+            console.log(event);
+          });
+
+          justifiPayments.addEventListener('payment-row-clicked', (event) => {
+            console.log(event);
+          });
+        </script>
       </body>
     </html>
   `);
