@@ -8,13 +8,17 @@
     "start:checkout": "nodemon ./examples/checkout.js",
     "start:checkout-with-insurance": "nodemon ./examples/checkout-with-insurance.js",
     "start:dispute": "nodemon ./examples/dispute.js",
+    "start:checkouts-list": "nodemon ./examples/checkouts-list.js",
     "start:payment-provisioning": "nodemon ./examples/payment-provisioning.js",
+    "start:tokenize-payment-method": "nodemon ./examples/tokenize-payment-method.js",
+    "start:terminals-list": "nodemon ./examples/terminals-list.js",
+    "start:payments-list": "nodemon ./examples/payments-list.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2",
+    "express": "^4.21.0",
     "nodemon": "^3.1.4",
     "@justifi/webcomponents": "^4.0.0"
   },

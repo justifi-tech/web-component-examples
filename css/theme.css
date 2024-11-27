@@ -8,7 +8,8 @@ justifi-dispute-management {
   margin: 5% auto;
 }
 
-justifi-checkout {
+justifi-checkout,
+justifi-tokenize-payment-method {
   display: block;
   max-width: 400px;
   padding: 40px;
