@@ -55,8 +55,10 @@ async function getWebComponentToken(token, accountId) {
 }
 
 app.get('/', async (req, res) => {
-  const token = await getToken();
-  const webComponentToken = await getWebComponentToken(token, process.env.SUB_ACCOUNT_ID);
+  // const token = await getToken();
+  // const webComponentToken = await getWebComponentToken(token, process.env.SUB_ACCOUNT_ID);
+  const disputeId = ""
+  const webComponentToken = ""
 
   res.send(`
     <!DOCTYPE html>
@@ -71,7 +73,7 @@ app.get('/', async (req, res) => {
       <body>
         <div style="margin:0 auto;max-width:700px;">
           <justifi-dispute-management
-            dispute-id=""
+            dispute-id="${disputeId}"
             auth-token="${webComponentToken}">
           </justifi-dispute-management>
         </div>
