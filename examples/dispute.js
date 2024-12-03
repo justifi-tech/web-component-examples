@@ -56,6 +56,7 @@ async function getWebComponentToken(token, accountId) {
 
 app.get('/', async (req, res) => {
   const token = await getToken();
+  const disputeId = process.env.DISPUTE_ID;
   const webComponentToken = await getWebComponentToken(token, process.env.SUB_ACCOUNT_ID);
 
   res.send(`
@@ -78,8 +79,8 @@ app.get('/', async (req, res) => {
 
         <script>
           const justifiDisputeManagement = document.querySelector('justifi-dispute-management');
-          justifiDisputeManagement.addEventListener('submitted', console.log(event));
-          justifiDisputeManagement.addEventListener('error-event', console.log(event));
+          justifiDisputeManagement.addEventListener('submitted', (event) => console.log(event));
+          justifiDisputeManagement.addEventListener('error-event', (event) => console.log(event));
         </script>
       </body>
     </html>
