@@ -18,7 +18,7 @@ async function getToken() {
 
   let response;
   try {
-    response = await fetch('https://api.justifi.ai/oauth/token', {
+    response = await fetch(`${process.env.API_ORIGIN}/oauth/token`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ async function getToken() {
 
 async function getWebComponentToken(token, accountId) {
   const response = await fetch(
-    'https://api.justifi.ai/v1/web_component_tokens',
+    `${process.env.API_ORIGIN}/v1/web_component_tokens`,
     {
       method: 'POST',
       headers: {
@@ -45,7 +45,7 @@ async function getWebComponentToken(token, accountId) {
       },
       body: JSON.stringify({
         resources: [
-          `read:account:${accountId}`,
+          `write:account:${accountId}`,
         ],
       }),
     }
