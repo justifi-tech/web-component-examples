@@ -50,8 +50,6 @@ async function getWebComponentToken(token) {
     }
   );
 
-  console.log('Web Component Token Response:', response);
-
   const { access_token } = await response.json();
   return access_token;
 }
@@ -72,7 +70,7 @@ app.get('/', async (req, res) => {
         <link rel="stylesheet" href="/styles/example.css">
       </head>
       <body>
-        <div style="margin:0 auto;max-width:700px;">
+        <div style="padding:25px;">
           <justifi-terminals-list auth-token="${webComponentToken}" account-id="${accountId}"></justifi-terminals-list>
         </div>
         <script>
@@ -82,7 +80,7 @@ app.get('/', async (req, res) => {
             console.log(event);
           });
 
-          justifiTerminals.addEventListener('terminal-row-clicked', (event) => {
+          justifiTerminals.addEventListener('row-clicked', (event) => {
             console.log(event);
           });
         </script>

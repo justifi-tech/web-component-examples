@@ -55,7 +55,7 @@ async function getWebComponentToken(token) {
 }
 
 app.get('/', async (req, res) => {
-  const subAccountID = process.env.SUB_ACCOUNT_ID;
+  const accountId = process.env.SUB_ACCOUNT_ID;
   const token = await getToken();
   const webComponentToken = await getWebComponentToken(token);
 
@@ -63,7 +63,7 @@ app.get('/', async (req, res) => {
     <!DOCTYPE html>
     <html>
       <head>
-        <title>JustiFi Checkouts List Component</title>
+        <title>JustiFi Payments List Component</title>
         <script type="module" src="/scripts/webcomponents/webcomponents.esm.js"></script>
         <link rel="stylesheet" href="/scripts/webcomponents/webcomponents.css">
         <link rel="stylesheet" href="/styles/theme.css">
@@ -71,16 +71,21 @@ app.get('/', async (req, res) => {
       </head>
       <body>
         <div style="padding:25px;">
-          <justifi-checkouts-list auth-token="${webComponentToken}" account-id="${subAccountID}"></justifi-checkouts-list>
+          <div>
+            <justifi-payments-list-filters></justifi-payments-list-filters>
+          </div>
+          <div>
+            <justifi-payments-list auth-token="${webComponentToken}" account-id="${accountId}"></justifi-payments-list>
+          </div>
         </div>
         <script>
-          const justifiCheckouts = document.querySelector('justifi-checkouts-list');
+          const justifiPayments = document.querySelector('justifi-payments-list');
 
-          justifiCheckouts.addEventListener('error-event', (event) => {
+          justifiPayments.addEventListener('error-event', (event) => {
             console.log(event);
           });
 
-          justifiCheckouts.addEventListener('row-clicked', (event) => {
+          justifiPayments.addEventListener('row-clicked', (event) => {
             console.log(event);
           });
         </script>

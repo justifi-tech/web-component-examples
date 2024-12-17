@@ -55,7 +55,7 @@ async function getWebComponentToken(token) {
 }
 
 app.get('/', async (req, res) => {
-  const subAccountID = process.env.SUB_ACCOUNT_ID;
+  const accountId = process.env.SUB_ACCOUNT_ID;
   const token = await getToken();
   const webComponentToken = await getWebComponentToken(token);
 
@@ -71,7 +71,12 @@ app.get('/', async (req, res) => {
       </head>
       <body>
         <div style="padding:25px;">
-          <justifi-checkouts-list auth-token="${webComponentToken}" account-id="${subAccountID}"></justifi-checkouts-list>
+          <div>
+            <justifi-checkouts-list-filters></justifi-checkouts-list-filters>
+          </div>
+          <div>
+            <justifi-checkouts-list auth-token="${webComponentToken}" account-id="${accountId}"></justifi-checkouts-list>
+          </div>
         </div>
         <script>
           const justifiCheckouts = document.querySelector('justifi-checkouts-list');
