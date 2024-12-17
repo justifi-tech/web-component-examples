@@ -16,6 +16,8 @@
     "start:terminals-list-with-filters": "pnpm nodemon ./examples/terminals-list-with-filters.js",
     "start:payments-list": "pnpm nodemon ./examples/payments-list.js",
     "start:payments-list-with-filters": "pnpm nodemon ./examples/payments-list-with-filters.js",
+    "start:payouts-list": "pnpm nodemon ./examples/payouts-list.js",
+    "start:payouts-list-with-filters": "pnpm nodemon ./examples/payouts-list-with-filters.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
