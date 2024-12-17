@@ -13,6 +13,7 @@
     "start:tokenize-payment-method": "pnpm nodemon ./examples/tokenize-payment-method.js",
     "start:terminals-list": "pnpm nodemon ./examples/terminals-list.js",
     "start:payments-list": "pnpm nodemon ./examples/payments-list.js",
+    "start:payments-list-with-filters": "pnpm nodemon ./examples/payments-list-with-filters.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
