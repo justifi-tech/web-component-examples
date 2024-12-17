@@ -71,7 +71,12 @@ app.get('/', async (req, res) => {
       </head>
       <body>
         <div style="padding:25px;">
-          <justifi-terminals-list auth-token="${webComponentToken}" account-id="${accountId}"></justifi-terminals-list>
+          <div>
+            <justifi-terminals-list-filters></justifi-terminals-list-filters>
+          </div>
+          <div>
+            <justifi-terminals-list auth-token="${webComponentToken}" account-id="${accountId}"></justifi-terminals-list>
+          </div>
         </div>
         <script>
           const justifiTerminals = document.querySelector('justifi-terminals-list');
