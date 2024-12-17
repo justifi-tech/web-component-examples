@@ -9,6 +9,7 @@
     "start:checkout": "pnpm nodemon ./examples/checkout.js",
     "start:checkout-with-insurance": "pnpm nodemon ./examples/checkout-with-insurance.js",
     "start:checkouts-list": "pnpm nodemon ./examples/checkouts-list.js",
+    "start:checkouts-list-with-filters": "pnpm nodemon ./examples/checkouts-list-with-filters.js",
     "start:payment-provisioning": "pnpm nodemon ./examples/payment-provisioning.js",
     "start:tokenize-payment-method": "pnpm nodemon ./examples/tokenize-payment-method.js",
     "start:terminals-list": "pnpm nodemon ./examples/terminals-list.js",
