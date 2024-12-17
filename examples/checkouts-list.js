@@ -73,6 +73,17 @@ app.get('/', async (req, res) => {
         <div style="margin:0 auto;max-width:700px;">
           <justifi-checkouts-list auth-token="${webComponentToken}" account-id="${subAccountID}"></justifi-checkouts-list>
         </div>
+        <script>
+          const justifiCheckouts = document.querySelector('justifi-checkouts-list');
+
+          justifiCheckouts.addEventListener('error-event', (event) => {
+            console.log(event);
+          });
+
+          justifiCheckouts.addEventListener('row-clicked', (event) => {
+            console.log(event);
+          });
+        </script>
       </body>
     </html>
   `);

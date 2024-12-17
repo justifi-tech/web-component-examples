@@ -82,7 +82,7 @@ app.get('/', async (req, res) => {
             console.log(event);
           });
 
-          justifiTerminals.addEventListener('terminal-row-clicked', (event) => {
+          justifiTerminals.addEventListener('row-clicked', (event) => {
             console.log(event);
           });
         </script>
