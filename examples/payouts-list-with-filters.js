@@ -63,23 +63,28 @@ app.get('/', async (req, res) => {
     <!DOCTYPE html>
     <html>
       <head>
-        <title>JustiFi Payments List Component</title>
+        <title>JustiFi Payouts List Component</title>
         <script type="module" src="/scripts/webcomponents/webcomponents.esm.js"></script>
         <link rel="stylesheet" href="/styles/theme.css">
         <link rel="stylesheet" href="/styles/example.css">
       </head>
       <body>
         <div style="padding:25px;">
-          <justifi-payments-list auth-token="${webComponentToken}" account-id="${accountId}"></justifi-payments-list>
+          <div>
+            <justifi-payouts-list-filters></justifi-payouts-list-filters>
+          </div>
+          <div>
+            <justifi-payouts-list auth-token="${webComponentToken}" account-id="${accountId}"></justifi-payouts-list>
+          </div>
         </div>
         <script>
-          const justifiPayments = document.querySelector('justifi-payments-list');
+          const justifiPayouts = document.querySelector('justifi-payouts-list');
 
-          justifiPayments.addEventListener('error-event', (event) => {
+          justifiPayouts.addEventListener('error-event', (event) => {
             console.log(event);
           });
 
-          justifiPayments.addEventListener('row-clicked', (event) => {
+          justifiPayouts.addEventListener('row-clicked', (event) => {
             console.log(event);
           });
         </script>

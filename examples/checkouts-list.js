@@ -65,14 +65,24 @@ app.get('/', async (req, res) => {
       <head>
         <title>JustiFi Checkouts List Component</title>
         <script type="module" src="/scripts/webcomponents/webcomponents.esm.js"></script>
-        <link rel="stylesheet" href="/scripts/webcomponents/webcomponents.css">
         <link rel="stylesheet" href="/styles/theme.css">
         <link rel="stylesheet" href="/styles/example.css">
       </head>
       <body>
-        <div style="margin:0 auto;max-width:700px;">
+        <div style="padding:25px;">
           <justifi-checkouts-list auth-token="${webComponentToken}" account-id="${subAccountID}"></justifi-checkouts-list>
         </div>
+        <script>
+          const justifiCheckouts = document.querySelector('justifi-checkouts-list');
+
+          justifiCheckouts.addEventListener('error-event', (event) => {
+            console.log(event);
+          });
+
+          justifiCheckouts.addEventListener('row-clicked', (event) => {
+            console.log(event);
+          });
+        </script>
       </body>
     </html>
   `);
