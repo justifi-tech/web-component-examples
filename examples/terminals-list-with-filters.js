@@ -55,9 +55,9 @@ async function getWebComponentToken(token) {
 }
 
 app.get('/', async (req, res) => {
-  const accountId = process.env.SUB_ACCOUNT_ID;
-  const token = await getToken();
-  const webComponentToken = await getWebComponentToken(token);
+    const accountId = process.env.SUB_ACCOUNT_ID;
+    const token = await getToken();
+    const webComponentToken = await getWebComponentToken(token);  
 
   res.send(`
     <!DOCTYPE html>
@@ -65,7 +65,6 @@ app.get('/', async (req, res) => {
       <head>
         <title>JustiFi Terminals List Component</title>
         <script type="module" src="/scripts/webcomponents/webcomponents.esm.js"></script>
-        <link rel="stylesheet" href="/scripts/webcomponents/webcomponents.css">
         <link rel="stylesheet" href="/styles/theme.css">
         <link rel="stylesheet" href="/styles/example.css">
       </head>
