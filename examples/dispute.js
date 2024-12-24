@@ -65,7 +65,6 @@ app.get('/', async (req, res) => {
       <head>
         <title>JustiFi Dispute Component</title>
         <script type="module" src="/scripts/webcomponents/webcomponents.esm.js"></script>
-        <link rel="stylesheet" href="/scripts/webcomponents/webcomponents.css">
         <link rel="stylesheet" href="/styles/theme.css">
         <link rel="stylesheet" href="/styles/example.css">
       </head>
@@ -80,6 +79,8 @@ app.get('/', async (req, res) => {
         <script>
           const justifiDisputeManagement = document.querySelector('justifi-dispute-management');
           justifiDisputeManagement.addEventListener('submitted', (event) => console.log(event));
+          justifiDisputeManagement.addEventListener('form-step-completed', (event) => console.log(event));
+          justifiDisputeManagement.addEventListener('click-event', (event) => console.log(event));
           justifiDisputeManagement.addEventListener('error-event', (event) => console.log(event));
         </script>
       </body>
