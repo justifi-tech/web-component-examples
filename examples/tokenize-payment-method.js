@@ -51,6 +51,7 @@ async function getWebComponentToken(token) {
     }
   );
   const { access_token } = await response.json();
+  console.log('Web Component Token:', access_token);
   return access_token;
 }
 
@@ -87,7 +88,7 @@ app.get('/', async (req, res) => {
           document.getElementById('output-pane').innerHTML = '<code><pre>' + JSON.stringify(event.detail, null, 2) + '</pre></code>';
         }
 
-        justifiTokenizePaymentMethod.addEventListener('submitted', (event) => {
+        justifiTokenizePaymentMethod.addEventListener('submit-event', (event) => {
           console.log(event);
           writeOutputToPage(event);
         });

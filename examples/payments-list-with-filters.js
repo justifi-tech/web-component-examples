@@ -84,7 +84,7 @@ app.get('/', async (req, res) => {
             console.log(event);
           });
 
-          justifiPayments.addEventListener('row-clicked', (event) => {
+          justifiPayments.addEventListener('click-event', (event) => {
             console.log(event);
           });
         </script>

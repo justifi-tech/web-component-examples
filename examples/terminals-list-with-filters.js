@@ -55,9 +55,9 @@ async function getWebComponentToken(token) {
 }
 
 app.get('/', async (req, res) => {
-    const accountId = process.env.SUB_ACCOUNT_ID;
-    const token = await getToken();
-    const webComponentToken = await getWebComponentToken(token);  
+  const accountId = process.env.SUB_ACCOUNT_ID;
+  const token = await getToken();
+  const webComponentToken = await getWebComponentToken(token);
 
   res.send(`
     <!DOCTYPE html>
@@ -84,7 +84,7 @@ app.get('/', async (req, res) => {
             console.log(event);
           });
 
-          justifiTerminals.addEventListener('row-clicked', (event) => {
+          justifiTerminals.addEventListener('click-event', (event) => {
             console.log(event);
           });
         </script>
