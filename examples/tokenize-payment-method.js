@@ -51,7 +51,6 @@ async function getWebComponentToken(token) {
     }
   );
   const { access_token } = await response.json();
-  console.log('Web Component Token:', access_token);
   return access_token;
 }
 
