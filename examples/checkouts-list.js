@@ -79,7 +79,7 @@ app.get('/', async (req, res) => {
             console.log(event);
           });
 
-          justifiCheckouts.addEventListener('row-clicked', (event) => {
+          justifiCheckouts.addEventListener('click-event', (event) => {
             console.log(event);
           });
         </script>

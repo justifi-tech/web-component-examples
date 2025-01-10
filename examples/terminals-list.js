@@ -79,7 +79,7 @@ app.get('/', async (req, res) => {
             console.log(event);
           });
 
-          justifiTerminals.addEventListener('row-clicked', (event) => {
+          justifiTerminals.addEventListener('click-event', (event) => {
             console.log(event);
           });
         </script>
